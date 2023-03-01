@@ -1,0 +1,43 @@
+@import "colors.scss";
+@import "breakpoints.scss";
+
+.notification {
+    position: fixed;
+    background-color: $brown;
+    color: $creme;
+    width: 90%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: 1000;
+    padding-inline: 25px;
+
+    @include breakpoint($medium-up) {
+        width: 800px;
+        height: 400px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: underline;
+        color: rgb(180, 145, 98);
+    }
+
+    .cross {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.none {
+    display: none;
+}

@@ -1,0 +1,22 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.root {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(102, 46, 14);
+    color: $creme;
+    height: 0%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid $brown;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-inline: 15%;
+    box-sizing: content-box;
+    z-index: 1;
+}

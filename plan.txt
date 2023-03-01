@@ -1,0 +1,2 @@
+Fix types
+Work on design (colors, images, fonts)

@@ -1,0 +1,49 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.root {
+    margin-top: 40px;
+    text-align: center;
+    width: 90%;
+
+    @include breakpoint($medium-up) {
+        width: 60%;
+    }
+
+    .input {
+        width: 100%;
+        margin-bottom: 10px;
+        input {
+            text-align: left;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    .message {
+        width: 100%;
+        height: 240px;
+        background-color: rgba(255, 228, 196, 0.466);
+        outline: 0;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 6px;
+        padding: 20px 14px;
+        color: $brown;
+
+        &::placeholder {
+            color: $light-brown;
+        }
+
+        &:hover {
+            background-color: bisque;
+        }
+    }
+
+    .submit {
+        width: 100%;
+    }
+}

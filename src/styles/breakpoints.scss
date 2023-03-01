@@ -1,0 +1,80 @@
+@use "sass:math";
+
+$base-font-size: 16px;
+$query-fix: false !default;
+// $=Media-query breakpoints
+// --------------------------------------------------------------------------
+
+$bp-small-phone: 321px;
+$bp-small-up: math.div(500px, $base-font-size) * 1em;
+$bp-small-down: math.div(499px, $base-font-size) * 1em;
+$bp-medium-tablet-up: math.div(600px, $base-font-size) * 1em;
+$bp-medium-tablet-down: math.div(599px, $base-font-size) * 1em;
+$bp-medium-large-tablet-up: math.div(750px, $base-font-size) * 1em;
+$bp-medium-large-tablet-down: math.div(749px, $base-font-size) * 1em;
+$bp-medium-up: math.div(960px, $base-font-size) * 1em;
+$bp-medium-down: math.div(959px, $base-font-size) * 1em;
+$bp-large-up: math.div(1000px, $base-font-size) * 1em;
+$bp-large-down: math.div(999px, $base-font-size) * 1em;
+$bp-x-large-up: math.div(1300px, $base-font-size) * 1em;
+$bp-x-large-down: math.div(1299px, $base-font-size) * 1em;
+$bp-big-up: math.div(1600px, $base-font-size) * 1em;
+$bp-mega-up: math.div(1800px, $base-font-size) * 1em;
+$bp-x-mega-up: math.div(2000px, $base-font-size) * 1em;
+
+// these are helpers for ex. @include breakpoint($medium-up);
+$small-phone-up: "min-width:" + $bp-small-phone;
+$small-phone-down: "max-width:" + $bp-small-phone;
+$small-up: "min-width:" + $bp-small-up;
+$small-down: "max-width:" + $bp-small-down;
+$medium-tablet-up: "min-width:" + $bp-medium-tablet-up;
+$medium-tablet-down: "max-width:" + $bp-medium-tablet-down;
+$medium-large-tablet-up: "min-width:" + $bp-medium-large-tablet-up;
+$medium-large-tablet-down: "max-width:" + $bp-medium-large-tablet-down;
+$medium-up: "min-width:" + $bp-medium-up;
+$medium-down: "max-width:" + $bp-medium-down;
+$large-up: "min-width:" + $bp-large-up;
+$large-down: "max-width:" + $bp-large-down;
+$x-large-up: "min-width:" + $bp-x-large-up;
+$x-large-down: "max-width:" + $bp-x-large-down;
+$big-up: "min-width:" + $bp-big-up;
+$mega-up: "min-width:" + $bp-mega-up;
+$x-mega-up: "min-width:" + $bp-x-mega-up;
+$landscape: "landscape";
+
+// $=Breakpoint
+// --------------------------------------------------------------------------
+
+@mixin breakpoint($query, $fix-ie: false) {
+    @if ($query-fix == false) {
+        @if ($fix-ie) {
+            .old-ie & {
+                @content;
+            }
+        }
+
+        @if (length($query) == 2) {
+            @media only screen and (nth($query, 1)) and (nth($query, 2)) {
+                @content;
+            }
+        }
+
+        @if (length($query) == 1) {
+            @media only screen and ($query) {
+                @content;
+            }
+        }
+    } @else if ($fix-ie and $query-fix) {
+        @content;
+    } @else if ($query-fix) {
+        @if (type-of($query-fix) == "bool") {
+            @content;
+        } @else {
+            @each $value in $query-fix {
+                @if ($query == $value) {
+                    @content;
+                }
+            }
+        }
+    }
+}

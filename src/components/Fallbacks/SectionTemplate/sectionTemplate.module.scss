@@ -1,0 +1,26 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.description {
+    margin-top: 60px;
+    text-align: center;
+    width: 70%;
+}
+
+.pageInfoWrapper {
+    margin-top: 60px;
+    .infoIcon {
+        width: 40px;
+        cursor: help;
+    }
+
+    &:hover {
+        .info {
+            height: 50%;
+            @include breakpoint($medium-up) {
+                height: 25%;
+            }
+        }
+    }
+}

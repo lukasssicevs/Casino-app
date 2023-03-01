@@ -1,0 +1,68 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.root {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: $creme;
+    border-bottom: 160px solid $light-brown;
+    @include breakpoint($medium-up) {
+        flex-direction: row;
+        position: initial;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba(255, 255, 255, 0);
+        border-bottom: none;
+    }
+
+    .navigation {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        @include breakpoint($medium-up) {
+            display: flex;
+            width: 80%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+        }
+    }
+
+    .navItem {
+        @include centered-flex;
+        height: 65px;
+        :hover {
+            background-color: $light-brown;
+        }
+        @include breakpoint($medium-up) {
+        }
+
+        .paths {
+            @include centered-flex;
+            text-transform: uppercase;
+            @include breakpoint($medium-up) {
+                border-radius: 10px;
+                border: solid 5px rgba(119, 64, 19, 0.103);
+
+                &:hover {
+                    border: solid 5px rgba(119, 64, 19, 0.63);
+                }
+            }
+        }
+
+        .disabled {
+            pointer-events: none;
+            color: $light-brown;
+        }
+    }
+}

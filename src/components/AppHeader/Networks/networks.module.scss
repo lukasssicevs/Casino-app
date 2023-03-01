@@ -1,0 +1,67 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.networkBtn {
+    min-width: fit-content;
+    margin-block: 30px;
+    position: fixed;
+    top: 420px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @include breakpoint($medium-up) {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0%);
+    }
+
+    .networkBtnText {
+        white-space: nowrap;
+    }
+
+    .arrowUp,
+    .arrowDown {
+        width: 15px;
+    }
+
+    .arrowUp {
+        transform: rotate(180deg);
+    }
+}
+
+.networksDropdown {
+    position: absolute;
+    background-color: $creme;
+    border-radius: 10px;
+    padding: 10px 20px;
+    top: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include breakpoint($medium-up) {
+        top: 80px;
+        right: 3%;
+        left: initial;
+        transform: translate(0%, 0%);
+    }
+
+    .network {
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-align: center;
+
+        cursor: pointer;
+        &:hover {
+            background-color: $light-creme;
+        }
+    }
+
+    .selectedNetwork {
+        background-color: $light-creme;
+    }
+}

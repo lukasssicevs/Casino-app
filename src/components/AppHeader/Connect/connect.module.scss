@@ -1,0 +1,20 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.root {
+    min-width: fit-content;
+    margin-block: 30px;
+    position: fixed;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include breakpoint($medium-up) {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0%);
+        width: initial;
+        margin-block: 0px;
+    }
+}

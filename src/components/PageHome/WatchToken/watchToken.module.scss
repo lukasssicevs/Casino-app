@@ -1,0 +1,26 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.root {
+    cursor: pointer;
+
+    .watchTokenImg {
+        animation: rotation 2s infinite linear;
+    }
+
+    &:hover {
+        .info {
+            height: 25%;
+        }
+    }
+}

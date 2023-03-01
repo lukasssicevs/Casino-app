@@ -19,31 +19,33 @@ export default function SectionTemplate({
     description,
 }: IProps): React.ReactElement {
     const {
-        state: { connection, provider, CMSData },
+        state: { connection, CMSData },
     } = useContext(AppContext)
 
     const renderSection = () => {
-        switch (true) {
-            case !provider:
-                return (
-                    <div className={styles.description}>
-                        <NoProvider
-                            installDescription={CMSData?.installDescription}
-                        />
-                    </div>
-                )
-            case !connection:
-                return (
-                    <div className={styles.description}>
-                        <NoConnection
-                            connectionDescription={
-                                CMSData?.connectionDescription
-                            }
-                        />
-                    </div>
-                )
-            default:
-                return children
+        if (typeof window !== "undefined") {
+            switch (true) {
+                case !window.ethereum:
+                    return (
+                        <div className={styles.description}>
+                            <NoProvider
+                                installDescription={CMSData?.installDescription}
+                            />
+                        </div>
+                    )
+                case !connection:
+                    return (
+                        <div className={styles.description}>
+                            <NoConnection
+                                connectionDescription={
+                                    CMSData?.connectionDescription
+                                }
+                            />
+                        </div>
+                    )
+                default:
+                    return children
+            }
         }
     }
 

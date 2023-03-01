@@ -36,7 +36,6 @@ export default function AppContextProvider({
     children: React.ReactNode
     CMSData: ICMSData
 }): React.ReactElement {
-    const { ethereum } = window
     const [state, setState] = useState<IAppState>({
         notification: ENotification.none,
         chainId: SUPPORTED_NETWORKS[0],
@@ -44,11 +43,21 @@ export default function AppContextProvider({
         CSNBalance: CSN.initBalance,
         ETHBalance: ETH.initBalance,
         CMSData: CMSData,
-        provider: ethereum && new ethers.providers.Web3Provider(ethereum),
     })
 
     useEffect(() => {
+        if (window.ethereum) {
+            setState((prevState) => ({
+                ...prevState,
+                provider: new ethers.providers.Web3Provider(window.ethereum),
+            }))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
         if (state.provider) {
+            const { ethereum } = window
             ethereum.on("accountsChanged", checkConnection)
             ethereum.on("chainChanged", checkNetwork)
             ethereum.on("accountsChanged", initContracts)
@@ -58,21 +67,6 @@ export default function AppContextProvider({
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.provider])
-
-    // useEffect(() => {
-    //     if (ethereum) {
-    //         checkConnection()
-    //         checkNetwork()
-    //         initContracts()
-    //     } else {
-    //         setState((prevState) => ({
-    //             ...prevState,
-    //             network: NO_NETWORK,
-    //         }))
-    //     }
-
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [state.chainId, state.provider])
 
     useEffect(() => {
         const getETHBalance = async () => {
@@ -158,6 +152,7 @@ export default function AppContextProvider({
     }
 
     const checkNetwork = async () => {
+        const { ethereum } = window
         if (ethereum) {
             const currentNetworkId = await ethereum.request({
                 method: "eth_chainId",

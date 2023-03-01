@@ -5,7 +5,6 @@ import contentfulClient from "@/src/cms/client"
 import { CMS } from "@/src/cms/entries"
 import { Document } from "@contentful/rich-text-types"
 import { INotifications } from "@/src/types/CMSData"
-import { Suspense } from "react"
 
 async function getCMSData() {
     const {

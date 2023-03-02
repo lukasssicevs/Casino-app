@@ -1,8 +1,8 @@
 const COLORS = {
-    brown: "rgb(80, 28, 4)",
-    lightBrown: "rgba(121, 82, 30, 0.445);",
-    creme: "rgb(247, 210, 165)",
-    lightCreme: "rgba(255, 228, 196, 0.822)",
+    gray: "rgba(70, 69, 69, 0.541)",
+    darkGray: "rgb(70, 69, 69)",
+    magenta: "rgb(255, 0, 255)",
+    mustard: "rgb(241, 212, 105)",
 }
 
 export default COLORS

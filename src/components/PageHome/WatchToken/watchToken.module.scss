@@ -18,9 +18,17 @@
         animation: rotation 2s infinite linear;
     }
 
+    .info {
+        padding-top: 0;
+        border-top: 0px;
+    }
+
     &:hover {
         .info {
+            padding: inherit;
             height: 25%;
+            padding-top: 60px;
+            border-top: 2px solid $dark-gray;
         }
     }
 }

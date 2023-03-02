@@ -1,4 +1,6 @@
+@import "breakpoints.scss";
 @import "colors.scss";
+@import "base.scss";
 @import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
@@ -6,30 +8,42 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(219, 182, 148);
+    background-color: $pink;
+    margin-bottom: 80px;
 }
 
 * {
-    //font-family: "Quantico";
+    color: $dark-gray;
     font-family: "VT323", monospace;
-    font-size: 24px;
+    font-size: $font-large;
     box-sizing: border-box;
 }
 
 main {
     position: relative;
-    padding: 20px;
     padding-bottom: 200px;
     top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-inline: 16px;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+h1 {
+    color: $magenta;
+    text-shadow: 4px 0px $dark-gray;
+    letter-spacing: 4px;
+    font-size: $font-x-large;
+
+    @include breakpoint($small-up) {
+        font-size: $font-xl-large;
+    }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -40,4 +54,18 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+    background-color: $dark-gray;
+    z-index: 1000;
+    border: 1px solid $dark-gray;
+    border-top: none;
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $magenta;
+    border-radius: 3px;
+    border: 1px solid $dark-gray;
 }

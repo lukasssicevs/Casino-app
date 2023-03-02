@@ -37,7 +37,7 @@ export default function AddToken({
                             address: CSN_ADDRESS[chainId as TSupportedNetwork],
                             symbol: CSN.symbol,
                             decimals: CSN.decimals,
-                            image: CSN.image,
+                            image: `https:${tokenImage.fields.file.url}`,
                         },
                     },
                 })
@@ -57,8 +57,8 @@ export default function AddToken({
             <Image
                 className={styles.watchTokenImg}
                 src={`https:${tokenImage.fields.file.url}`}
-                width={tokenImage.fields.file.details.image?.width}
-                height={tokenImage.fields.file.details.image?.height}
+                width={100}
+                height={100}
                 alt="Add CSN to wallet"
                 onClick={watchCSN}
             />

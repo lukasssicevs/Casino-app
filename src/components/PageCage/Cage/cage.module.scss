@@ -24,26 +24,28 @@
             width: 40%;
         }
 
-        .mint {
+        .mint,
+        .burn {
             width: 50%;
             position: absolute;
             float: left;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            transition: all 0.5s ease-in-out, z-index 2s, background-color 6s;
-            background-color: rgba(151, 110, 59, 0.527);
+            transition: all 0.3s ease-in-out, z-index 2s, background-color 1s;
+            background-color: $pink;
             z-index: 0;
-            border-right: 1px solid $brown;
+            border-right: 1px solid $dark-gray;
 
             &:hover {
-                background-color: rgb(151, 110, 59);
-                transition: all 0.5s ease-in-out, z-index 0s,
-                    background-color 0s;
+                background-color: $magenta;
+                transition: all 0.3s ease-in-out, z-index 0s,
+                    background-color 1s;
                 width: 100%;
                 z-index: 1;
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
                 border-right: 0;
+                border: 1px solid $dark-gray;
             }
         }
 
@@ -53,19 +55,21 @@
             float: right;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            transition: all 0.5s ease-in-out, background-color 6s;
-            background-color: rgba(206, 149, 80, 0.527);
+            transition: all 0.3s ease-in-out, background-color 1s;
+            background-color: $pink;
             z-index: 0;
-            border-left: 1px solid $brown;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: 1px solid $dark-gray;
 
             &:hover {
-                background-color: rgb(206, 149, 80);
-                transition: all 0.5s ease-in-out, background-color 0s;
+                background-color: $magenta;
+                transition: all 0.3s ease-in-out, background-color 1s;
                 width: 100%;
                 z-index: 1;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
-                border-left: 0;
+                border: 1px solid $dark-gray;
             }
         }
     }

@@ -17,11 +17,15 @@ async function getCMSData() {
         await contentfulClient.getEntry(CMS.connectionDesc)
     const { fields: notifications }: { fields: INotifications } =
         await contentfulClient.getEntry(CMS.notifications)
+    const { fields: logo }: { fields: any } = await contentfulClient.getEntry(
+        CMS.logo
+    )
 
     return {
         installDescription,
         connectionDescription,
         notifications,
+        logo,
     }
 }
 

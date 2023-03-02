@@ -6,4 +6,5 @@ export const CMS = {
     installDesc: "5rkJm3cB4NST6RWis0nhSK",
     connectionDesc: "4XX48hQWhKRpBMgHQMsLSQ",
     notifications: "6bI1mcAwlxZtFayDzb2xet",
+    logo: "6cv6pTD6nHIJUSivO5hxNK",
 }

@@ -6,13 +6,13 @@
     position: fixed;
     width: 100%;
     padding-inline: 3%;
-    color: $brown;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1%;
-    background-color: rgb(187, 136, 88);
-    height: 100px;
+    background-color: $purple;
+    height: 120px;
+    border-bottom: 2px solid $dark-gray;
     font-weight: 600;
     z-index: 1;
 }

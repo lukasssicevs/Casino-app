@@ -17,7 +17,7 @@
 
     &:hover {
         .info {
-            height: 50%;
+            height: calc(100% - 180px);
             @include breakpoint($medium-up) {
                 height: 25%;
             }

@@ -4,14 +4,15 @@
 
 .root {
     position: fixed;
-    top: 100px;
+    top: 120px;
     left: 0;
     right: 0;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: $creme;
-    border-bottom: 160px solid $light-brown;
+    background-color: $pink;
+    border-bottom: 160px solid $peach;
+    color: $purple;
     @include breakpoint($medium-up) {
         flex-direction: row;
         position: initial;
@@ -20,7 +21,7 @@
         height: 100%;
         align-items: center;
         justify-content: space-around;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: $purple;
         border-bottom: none;
     }
 
@@ -34,7 +35,7 @@
             height: 100%;
             align-items: center;
             justify-content: space-around;
-            gap: 10px;
+            gap: 14px;
         }
     }
 
@@ -42,27 +43,29 @@
         @include centered-flex;
         height: 65px;
         :hover {
-            background-color: $light-brown;
-        }
-        @include breakpoint($medium-up) {
+            background-color: $mustard;
         }
 
         .paths {
             @include centered-flex;
             text-transform: uppercase;
+            border-bottom: 0.1px solid $dark-gray;
+            min-width: 90px;
+
             @include breakpoint($medium-up) {
-                border-radius: 10px;
-                border: solid 5px rgba(119, 64, 19, 0.103);
+                border: 2px solid $dark-gray;
+                border-radius: 6px;
+                background-color: $mustard;
 
                 &:hover {
-                    border: solid 5px rgba(119, 64, 19, 0.63);
+                    background-color: $gold;
                 }
             }
         }
 
         .disabled {
             pointer-events: none;
-            color: $light-brown;
+            color: $gray;
         }
     }
 }

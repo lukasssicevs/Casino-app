@@ -1,9 +1,13 @@
 import { Document } from "@contentful/rich-text-types"
+import { Asset } from "contentful"
 
 export interface ICMSData {
     installDescription: Document
     connectionDescription: Document
     notifications: INotifications
+    logo: {
+        image: Asset
+    }
 }
 
 export interface INotifications {

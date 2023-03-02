@@ -3,8 +3,8 @@
 
 .notification {
     position: fixed;
-    background-color: $brown;
-    color: $creme;
+    background-color: $purple;
+    color: $peach;
     width: 90%;
     height: 200px;
     display: flex;
@@ -16,6 +16,7 @@
     border-radius: 5px;
     z-index: 1000;
     padding-inline: 25px;
+    border: 2px solid $dark-gray;
 
     @include breakpoint($medium-up) {
         width: 800px;
@@ -24,11 +25,12 @@
 
     h2 {
         text-align: center;
+        color: $mustard;
     }
 
     a {
         text-decoration: underline;
-        color: rgb(180, 145, 98);
+        color: $gold;
     }
 
     .cross {

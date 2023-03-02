@@ -1,11 +1,14 @@
+@import "colors.scss";
+
 .root {
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    background-color: rgba(121, 82, 30, 0.445);
+    background-color: $mustard;
+    border: 0.5px solid $dark-gray;
     padding: 10px 20px;
 
     &:hover {
-        background-color: rgba(202, 138, 55, 0.445);
+        background-color: $gold;
     }
 }

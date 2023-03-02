@@ -5,5 +5,5 @@ interface IProps {
 }
 
 export default function Heading({ heading }: IProps): React.ReactElement {
-    return <div className={styles.root}>{heading}</div>
+    return <h1 className={styles.root}>{heading}</h1>
 }

@@ -82,7 +82,7 @@ export default function Notification(): React.ReactElement {
         >
             <Cross
                 className={styles.cross}
-                color={COLORS.creme}
+                color={COLORS.mustard}
                 onClick={() =>
                     setState((prevState) => ({
                         ...prevState,

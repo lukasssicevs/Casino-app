@@ -2,9 +2,10 @@ interface IProps {
     onClick?: (e: React.MouseEvent<SVGSVGElement>) => any
     className?: string
     color?: string
+    style?: any
 }
 
-const Cross = ({ className, color, onClick }: IProps) => {
+const Cross = ({ className, color, onClick, style }: IProps) => {
     return (
         <svg
             className={className}
@@ -13,6 +14,7 @@ const Cross = ({ className, color, onClick }: IProps) => {
             width="20"
             height="20"
             cursor="pointer"
+            style={style}
         >
             <g transform="translate(1.042 1.042)">
                 <path

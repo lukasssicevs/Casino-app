@@ -8,8 +8,12 @@ export const checkAppropriateness = (
     max?: RuleParam
 ) => {
     switch (true) {
+        case !number:
+            return false
         case !!min && !!max:
-            return Number(min) < Number(number) && Number(number) <= Number(max)
+            return (
+                Number(min) <= Number(number) && Number(number) <= Number(max)
+            )
         case !!min:
             return Number(min) < Number(number)
         default:

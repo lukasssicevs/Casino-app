@@ -8,6 +8,7 @@ import styles from "./lottery.module.scss"
 import { parse, format } from "@/src/utils/calculate"
 import { checkAppropriateness } from "@/src/utils/rules"
 import { ENotification } from "@/src/types/Notification"
+import { MIN_ENTRANCE_AMOUNT } from "./constants"
 
 export default function Lottery(): React.ReactElement {
     const {
@@ -44,7 +45,7 @@ export default function Lottery(): React.ReactElement {
     }
 
     const allow = async () => {
-        if (checkAppropriateness(amount, "0", CSNBalance)) {
+        if (checkAppropriateness(amount, MIN_ENTRANCE_AMOUNT, CSNBalance)) {
             try {
                 const approveTx = await CSNContract?.approve(
                     lotteryContract?.address,
@@ -71,7 +72,7 @@ export default function Lottery(): React.ReactElement {
         } else {
             setState((prevState) => ({
                 ...prevState,
-                notification: !checkAppropriateness(amount)
+                notification: !checkAppropriateness(amount, MIN_ENTRANCE_AMOUNT)
                     ? ENotification.inappropriateAmount
                     : ENotification.insufficientFunds,
             }))
@@ -80,7 +81,7 @@ export default function Lottery(): React.ReactElement {
     }
 
     const fund = async () => {
-        if (checkAppropriateness(amount, 5, allowance)) {
+        if (checkAppropriateness(amount, MIN_ENTRANCE_AMOUNT, allowance)) {
             try {
                 const fundTx = await lotteryContract?.fund(parse.CSN(amount))
 
@@ -104,7 +105,7 @@ export default function Lottery(): React.ReactElement {
         } else {
             setState((prevState) => ({
                 ...prevState,
-                notification: !checkAppropriateness(amount, 5)
+                notification: !checkAppropriateness(amount, MIN_ENTRANCE_AMOUNT)
                     ? ENotification.inappropriateAmount
                     : ENotification.insufficientAllowance,
                 lotteryAllowance: allowance,
@@ -115,7 +116,10 @@ export default function Lottery(): React.ReactElement {
 
     const withdraw = async () => {
         const userStake = await getStake()
-        if (checkAppropriateness(amount, "0", userStake)) {
+        if (
+            checkAppropriateness(amount) &&
+            checkAppropriateness(amount, "0", userStake)
+        ) {
             try {
                 const withdrawTx = await lotteryContract?.withdraw(
                     parse.CSN(amount.toString())
@@ -159,7 +163,7 @@ export default function Lottery(): React.ReactElement {
                 className={styles.lotteryInput}
             />
             <div className={styles.lotteryAction}>
-                {Number(allowance) <= 5 ? (
+                {Number(allowance) <= MIN_ENTRANCE_AMOUNT ? (
                     <Button className={styles.approve} onClick={allow}></Button>
                 ) : (
                     <Button className={styles.fund} onClick={fund}>

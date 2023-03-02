@@ -17,50 +17,58 @@ export default function Cage(): React.ReactElement {
     const [amount, setAmount] = useState("")
 
     const mintCSN = async () => {
-        const mintAmount = parse.CSN(amount)
-        const ethRequired = convert.CSN_ETH(amount)
-        const weiRequired = parse.ETH(ethRequired)
+        if (checkAppropriateness(amount)) {
+            const mintAmount = parse.CSN(amount)
+            const ethRequired = convert.CSN_ETH(amount)
+            const weiRequired = parse.ETH(ethRequired)
 
-        if (checkAppropriateness(amount) && ethRequired <= ETHBalance) {
-            try {
-                const mintTx = await CSNContract?.mint(
-                    signerAddress,
-                    mintAmount,
-                    {
-                        value: weiRequired,
-                    }
-                )
-                setState((prevState) => ({
-                    ...prevState,
-                    notification: ENotification.waiting,
-                }))
-
-                provider?.once(mintTx.hash, () => {
+            if (ethRequired <= ETHBalance) {
+                try {
+                    const mintTx = await CSNContract?.mint(
+                        signerAddress,
+                        mintAmount,
+                        {
+                            value: weiRequired,
+                        }
+                    )
                     setState((prevState) => ({
                         ...prevState,
-                        notification: ENotification.confirmed,
-                        lastTxHash: mintTx.hash,
+                        notification: ENotification.waiting,
                     }))
+
+                    provider?.once(mintTx.hash, () => {
+                        setState((prevState) => ({
+                            ...prevState,
+                            notification: ENotification.confirmed,
+                            lastTxHash: mintTx.hash,
+                        }))
+                        setAmount("")
+                    })
+                } catch (e) {
+                    console.log(e)
                     setAmount("")
-                })
-            } catch (e) {
-                console.log(e)
+                }
+            } else {
+                setState((prevState) => ({
+                    ...prevState,
+                    notification: ENotification.insufficientFunds,
+                }))
                 setAmount("")
             }
         } else {
             setState((prevState) => ({
                 ...prevState,
-                notification:
-                    Number(amount) < 0
-                        ? ENotification.inappropriateAmount
-                        : ENotification.insufficientFunds,
+                notification: ENotification.inappropriateAmount,
             }))
             setAmount("")
         }
     }
 
     const burnCSN = async () => {
-        if (checkAppropriateness(amount, "0", CSNBalance)) {
+        if (
+            checkAppropriateness(amount) &&
+            checkAppropriateness(amount, "0", CSNBalance)
+        ) {
             try {
                 const burnAmount = parse.CSN(amount)
                 const burnTx = await CSNContract?.burn(burnAmount)
@@ -86,7 +94,7 @@ export default function Cage(): React.ReactElement {
             setState((prevState) => ({
                 ...prevState,
                 notification:
-                    Number(amount) < 0
+                    Number(amount) <= 0
                         ? ENotification.inappropriateAmount
                         : ENotification.insufficientFunds,
             }))

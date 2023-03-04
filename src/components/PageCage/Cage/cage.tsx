@@ -11,7 +11,14 @@ import { ENotification } from "@/src/types/Notification"
 
 export default function Cage(): React.ReactElement {
     const {
-        state: { signerAddress, CSNContract, provider, ETHBalance, CSNBalance },
+        state: {
+            signerAddress,
+            CSNContract,
+            provider,
+            ETHBalance,
+            CSNBalance,
+            chainId,
+        },
         setState,
     } = useContext(AppContext)
     const [amount, setAmount] = useState("")

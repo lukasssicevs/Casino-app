@@ -1,4 +1,0 @@
-Refactor contracts
-Deploy contracts
-Test FE with testnet contracts
-Deploy FE

@@ -38,7 +38,7 @@ export default function AppContextProvider({
 }): React.ReactElement {
     const [state, setState] = useState<IAppState>({
         notification: ENotification.none,
-        chainId: SUPPORTED_NETWORKS[0],
+        chainId: SUPPORTED_NETWORKS[1],
         network: NO_NETWORK,
         CSNBalance: CSN.initBalance,
         ETHBalance: ETH.initBalance,

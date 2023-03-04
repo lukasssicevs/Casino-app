@@ -5,7 +5,10 @@
 .description {
     margin-top: 60px;
     text-align: center;
-    width: 70%;
+
+    @include breakpoint($medium-up) {
+        width: 70%;
+    }
 }
 
 .pageInfoWrapper {

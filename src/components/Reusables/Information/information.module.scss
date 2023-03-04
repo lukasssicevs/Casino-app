@@ -16,7 +16,10 @@
     border-top: 2px solid $dark-gray;
     transition: 0.5s;
     padding-top: 60px;
-    padding-inline: 15%;
     box-sizing: content-box;
     z-index: 1;
+
+    p {
+        margin-inline: 16px;
+    }
 }

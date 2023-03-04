@@ -38,7 +38,7 @@ export default function AppContextProvider({
 }): React.ReactElement {
     const [state, setState] = useState<IAppState>({
         notification: ENotification.none,
-        chainId: SUPPORTED_NETWORKS[1],
+        chainId: NETWORKS[1].chainId,
         network: NO_NETWORK,
         CSNBalance: CSN.initBalance,
         ETHBalance: ETH.initBalance,
@@ -59,8 +59,9 @@ export default function AppContextProvider({
         if (state.provider) {
             const { ethereum } = window
             ethereum.on("accountsChanged", checkConnection)
-            ethereum.on("chainChanged", checkNetwork)
             ethereum.on("accountsChanged", initContracts)
+            ethereum.on("accountsChanged", checkNetwork)
+            ethereum.on("chainChanged", checkNetwork)
             checkConnection()
             checkNetwork()
             initContracts()
@@ -157,6 +158,43 @@ export default function AppContextProvider({
             const currentNetworkId = await ethereum.request({
                 method: "eth_chainId",
             })
+
+            // Switch to Goerli while still in testing phase
+            if (currentNetworkId !== NETWORKS[1].chainId) {
+                try {
+                    await ethereum.request({
+                        method: "wallet_switchEthereumChain",
+                        params: [{ chainId: NETWORKS[1].chainId }],
+                    })
+                    setState((prevState) => ({
+                        ...prevState,
+                        chain: NETWORKS[1].chainName,
+                    }))
+                } catch (switchError: any) {
+                    // This error code indicates that the chain has not been added to MetaMask.
+                    if (switchError.code === 4902) {
+                        try {
+                            await ethereum.request({
+                                method: "wallet_addEthereumChain",
+                                params: [
+                                    {
+                                        chainId: NETWORKS[1].chainId,
+                                        chainName: NETWORKS[1].chainName,
+                                        rpcUrls: [NETWORKS[1].rpcUrl],
+                                    },
+                                ],
+                            })
+
+                            setState((prevState) => ({
+                                ...prevState,
+                                chain: NETWORKS[1].chainName,
+                            }))
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    }
+                }
+            }
 
             let isKnownChain
 

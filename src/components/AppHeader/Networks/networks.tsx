@@ -30,8 +30,9 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
     const switchNetwork = async (network: INetwork) => {
         if (state.provider && window.ethereum) {
             const { chainId, chainName, rpcUrl } = network
+            const { ethereum } = window
             try {
-                await window.ethereum.request({
+                await ethereum.request({
                     method: "wallet_switchEthereumChain",
                     params: [{ chainId: chainId }],
                 })
@@ -43,7 +44,7 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
                 // This error code indicates that the chain has not been added to MetaMask.
                 if (switchError.code === 4902) {
                     try {
-                        await window.ethereum.request({
+                        await ethereum.request({
                             method: "wallet_addEthereumChain",
                             params: [
                                 {
@@ -96,7 +97,14 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
                                 state.chainId === network.chainId &&
                                     styles.selectedNetwork
                             )}
-                            onClick={() => switchNetwork(network)}
+                            onClick={() =>
+                                network.enabled && switchNetwork(network)
+                            }
+                            style={{
+                                cursor: network.enabled
+                                    ? "pointer"
+                                    : "not-allowed",
+                            }}
                         >
                             {network.chainName}
                         </div>

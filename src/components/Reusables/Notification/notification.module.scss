@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 40%;
+    top: 700px;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -19,8 +19,9 @@
     border: 2px solid $dark-gray;
 
     @include breakpoint($medium-up) {
+        top: 480px;
         width: 800px;
-        height: 400px;
+        height: 300px;
     }
 
     h2 {

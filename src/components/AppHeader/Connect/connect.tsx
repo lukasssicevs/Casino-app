@@ -6,6 +6,7 @@ import Button from "../../Reusables/Button"
 import styles from "./connect.module.scss"
 import { CONNECT } from "./constants"
 import { truncate } from "@/src/utils/truncate"
+import { ENotification } from "@/src/types/Notification"
 
 interface IProps {
     headerState: boolean
@@ -18,22 +19,29 @@ export default function Connect({ headerState }: IProps): React.ReactElement {
     } = useContext(AppContext)
 
     const connect = async () => {
-        try {
-            const accounts = await provider?.send("eth_requestAccounts", [])
+        if (provider) {
+            try {
+                const accounts = await provider?.send("eth_requestAccounts", [])
 
-            if (accounts[0]) {
-                const signer = provider?.getSigner(accounts[0])
-                setState((prevState) => ({
-                    ...prevState,
-                    signer: signer,
-                    signerAddress: accounts[0],
-                    connection: true,
-                }))
-            } else {
-                console.log("No account returned or user denied access.")
+                if (accounts[0]) {
+                    const signer = provider?.getSigner(accounts[0])
+                    setState((prevState) => ({
+                        ...prevState,
+                        signer: signer,
+                        signerAddress: accounts[0],
+                        connection: true,
+                    }))
+                } else {
+                    console.log("No account returned or user denied access.")
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
+        } else {
+            setState((prevState) => ({
+                ...prevState,
+                notification: ENotification.noWallet,
+            }))
         }
     }
 
@@ -45,7 +53,6 @@ export default function Connect({ headerState }: IProps): React.ReactElement {
                 display: headerState ? "flex" : "none",
                 cursor: !provider ? "not-allowed" : "pointer",
             }}
-            isDisabled={!provider}
         >
             {connection ? truncate(signerAddress) : CONNECT}
         </Button>

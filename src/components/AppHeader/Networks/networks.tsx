@@ -10,6 +10,7 @@ import { NETWORKS } from "@/src/constants/networks"
 import { INetwork } from "@/src/types/Network"
 import useMediaQueries from "@/src/hooks/useMediaQueries"
 import { useOnClickOutside } from "usehooks-ts"
+import { ENotification } from "@/src/types/Notification"
 
 interface IProps {
     headerState: boolean
@@ -64,6 +65,11 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
                     }
                 }
             }
+        } else {
+            setState((prevState) => ({
+                ...prevState,
+                notification: ENotification.noWallet,
+            }))
         }
     }
     return (
@@ -73,9 +79,7 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
                 onClick={() => setDropdown(!dropdown)}
                 style={{
                     display: headerState ? "flex" : "none",
-                    cursor: !state.provider ? "not-allowed" : "pointer",
                 }}
-                isDisabled={!state.provider}
             >
                 <div className={styles.networkBtnText}>{state.network}</div>
                 <Arrow

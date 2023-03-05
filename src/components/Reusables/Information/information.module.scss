@@ -4,22 +4,28 @@
 
 .root {
     position: fixed;
-    bottom: 0;
+    bottom: -50%;
     background-color: $mustard;
     color: $peach;
-    height: 0%;
+    height: 50%;
     left: 0;
     right: 0;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    padding-block: 40px;
     border-top: 2px solid $dark-gray;
-    transition: 0.5s;
-    padding-top: 60px;
-    box-sizing: content-box;
+    transition: 1s;
     z-index: 1;
+    overflow-y: scroll;
+    text-align: center;
+
+    @include breakpoint($medium-up) {
+        bottom: -40%;
+        height: 40%;
+    }
 
     p {
-        margin-inline: 16px;
+        margin-inline: 20px;
+        @include breakpoint($medium-up) {
+            margin-inline: 30%;
+        }
     }
 }

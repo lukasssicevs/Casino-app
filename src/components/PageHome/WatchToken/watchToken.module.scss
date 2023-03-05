@@ -14,21 +14,37 @@
 .root {
     cursor: pointer;
 
-    .watchTokenImg {
+    .img {
         animation: rotation 2s infinite linear;
     }
 
     .info {
-        padding-top: 0;
-        border-top: 0px;
+        position: absolute;
+        display: none;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 4px;
+        border: 2px solid $dark-gray;
+        background-color: $purple;
+        padding: 20px;
+        top: 340px;
+        text-align: center;
+        @include breakpoint($medium-up) {
+            top: 300px;
+            width: 400px;
+        }
+
+        p {
+            color: $mustard;
+        }
     }
 
     &:hover {
         .info {
-            padding: inherit;
-            height: 25%;
-            padding-top: 60px;
-            border-top: 2px solid $dark-gray;
+            display: block;
         }
     }
 }

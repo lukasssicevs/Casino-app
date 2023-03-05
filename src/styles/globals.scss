@@ -9,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: $pink;
-    margin-bottom: 80px;
 }
 
 * {
@@ -21,8 +20,8 @@ body {
 
 main {
     position: relative;
-    padding-bottom: 200px;
-    top: 100px;
+    padding-bottom: 120px;
+    top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +39,7 @@ h1 {
     text-shadow: 4px 0px $dark-gray;
     letter-spacing: 4px;
     font-size: $font-x-large;
+    line-height: 1px;
 
     @include breakpoint($small-up) {
         font-size: $font-xl-large;

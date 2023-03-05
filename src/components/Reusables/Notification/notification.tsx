@@ -90,7 +90,7 @@ export default function Notification(): React.ReactElement {
                     }))
                 }
             />
-            <h2>{renderNotification()}</h2>
+            <h3>{renderNotification()}</h3>
         </div>
     )
 }

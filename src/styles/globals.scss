@@ -13,9 +13,12 @@ body {
 
 * {
     color: $dark-gray;
+    font-size: $font-medium;
     font-family: "VT323", monospace;
-    font-size: $font-large;
     box-sizing: border-box;
+    @include breakpoint($small-up) {
+        font-size: $font-intermediate;
+    }
 }
 
 main {
@@ -39,10 +42,28 @@ h1 {
     text-shadow: 4px 0px $dark-gray;
     letter-spacing: 4px;
     font-size: $font-x-large;
-    line-height: 1px;
 
     @include breakpoint($small-up) {
         font-size: $font-xl-large;
+    }
+}
+
+h2 {
+    font-size: $font-intermediate;
+
+    @include breakpoint($small-up) {
+        font-size: $font-x-large;
+    }
+}
+
+h3 {
+    font-size: $font-intermediate;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    @include breakpoint($small-up) {
+        font-size: $font-large;
     }
 }
 

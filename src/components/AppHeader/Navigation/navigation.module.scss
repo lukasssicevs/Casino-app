@@ -11,7 +11,9 @@
     flex-direction: column;
     align-items: center;
     background-color: $pink;
-    border-bottom: 160px solid $peach;
+    padding-bottom: 160px;
+    background-color: $peach;
+    border-bottom: 1px solid $dark-gray;
     color: $purple;
     @include breakpoint($medium-up) {
         flex-direction: row;
@@ -23,6 +25,7 @@
         justify-content: space-around;
         background-color: $purple;
         border-bottom: none;
+        padding-bottom: 0;
     }
 
     .navigation {
@@ -42,6 +45,10 @@
     .navItem {
         @include centered-flex;
         height: 65px;
+        background-color: $pink;
+        @include breakpoint($medium-up) {
+            background-color: $purple;
+        }
         :hover {
             background-color: $mustard;
         }

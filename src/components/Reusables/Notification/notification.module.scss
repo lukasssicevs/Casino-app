@@ -15,7 +15,7 @@
     transform: translate(-50%, -50%);
     border-radius: 5px;
     z-index: 1000;
-    padding-inline: 25px;
+    padding-inline: 40px;
     border: 2px solid $dark-gray;
 
     @include breakpoint($medium-up) {
@@ -24,7 +24,7 @@
         height: 300px;
     }
 
-    h2 {
+    h3 {
         text-align: center;
         color: $mustard;
     }

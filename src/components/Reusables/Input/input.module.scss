@@ -36,8 +36,11 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        padding: 13px;
+        padding: 11px;
         left: 1%;
         cursor: pointer;
+        @include breakpoint($small-up) {
+            padding: 14px;
+        }
     }
 }

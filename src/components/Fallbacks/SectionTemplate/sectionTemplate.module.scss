@@ -3,7 +3,6 @@
 @import "breakpoints.scss";
 
 .description {
-    margin-top: 60px;
     text-align: center;
 
     @include breakpoint($medium-up) {

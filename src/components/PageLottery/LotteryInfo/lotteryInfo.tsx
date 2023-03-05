@@ -111,7 +111,7 @@ export default function LotteryInfo(): React.ReactElement {
                 </div>
             ))}
             <div className={styles.previous}>
-                <h2>Previous round results:</h2>
+                <h3>Previous round results:</h3>
                 {Object.keys(previousState).map((key) => (
                     <div className={styles.information} key={key}>
                         <div className={styles.left}>{key}</div>

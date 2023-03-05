@@ -110,25 +110,28 @@ export default function Cage(): React.ReactElement {
     }
 
     return (
-        <div className={styles.root}>
-            <Input
-                type="number"
-                placeholder="0.0000"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setAmount(e.target.value)
-                }
-                onClear={() => setAmount("")}
-                value={amount}
-                className={styles.cageInput}
-            />
-            <div className={styles.cageAction}>
-                <Button className={styles.mint} onClick={mintCSN}>
-                    GET CSN
-                </Button>
-                <Button className={styles.burn} onClick={burnCSN}>
-                    BURN CSN
-                </Button>
+        <>
+            <div className={styles.root}>
+                <Input
+                    type="number"
+                    placeholder="0.0000"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setAmount(e.target.value)
+                    }
+                    onClear={() => setAmount("")}
+                    value={amount}
+                    className={styles.cageInput}
+                />
+                <div className={styles.cageAction}>
+                    <Button className={styles.mint} onClick={mintCSN}>
+                        GET CSN
+                    </Button>
+                    <Button className={styles.burn} onClick={burnCSN}>
+                        BURN CSN
+                    </Button>
+                </div>
             </div>
-        </div>
+            <div className={styles.exchangeRate}>ETH / CSN = 10000</div>
+        </>
     )
 }

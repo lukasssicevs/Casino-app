@@ -1,0 +1,24 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "breakpoints.scss";
+
+.root {
+    background-color: $peach;
+    border-radius: 10px;
+    border: 2px solid $dark-gray;
+    padding: 20px 10px;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: linear 0.1s;
+    cursor: help;
+    width: 90%;
+
+    &:hover {
+        scale: 1.1;
+        background-color: $mustard;
+    }
+
+    @include breakpoint($medium-up) {
+        width: 40%;
+    }
+}

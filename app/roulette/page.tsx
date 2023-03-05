@@ -21,7 +21,7 @@ export default async function RoulettePage() {
     return (
         <SectionTemplate description={description}>
             <Heading heading={heading} />
-            <div style={{ marginBlock: "100px" }}>Coming soon...</div>
+            <h2 style={{ marginBlock: "100px" }}>Coming soon...</h2>
         </SectionTemplate>
     )
 }

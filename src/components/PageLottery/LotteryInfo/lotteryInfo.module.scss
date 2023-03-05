@@ -29,21 +29,23 @@
     }
 
     .previous {
-        background-color: $magenta;
-        border-radius: 30px;
+        background-color: $peach;
+        border-radius: 10px;
         border: 2px solid $dark-gray;
         padding: 20px 10px;
         width: 90%;
         margin: 0 auto;
         margin-top: 40px;
+        transition: linear 0.1s;
+        cursor: help;
+
+        &:hover {
+            scale: 1.1;
+            background-color: $mustard;
+        }
 
         @include breakpoint($medium-up) {
             width: 40%;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 0px;
         }
 
         .left,

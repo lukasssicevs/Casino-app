@@ -21,8 +21,6 @@ export default function Header(): React.ReactElement {
     const [headerState, setHeaderState] = useState(!isTablet)
     const ref = useRef(null)
 
-    console.log(headerState)
-
     useOnClickOutside(ref, () => isTablet && setHeaderState(false))
 
     useEffect(() => {

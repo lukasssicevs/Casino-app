@@ -160,7 +160,8 @@ export default function AppContextProvider({
             })
 
             // Switch to Goerli while still in testing phase
-            if (currentNetworkId !== NETWORKS[1].chainId) {
+            const addresses = await state.provider.listAccounts()
+            if (currentNetworkId !== NETWORKS[1].chainId && addresses.length) {
                 try {
                     await ethereum.request({
                         method: "wallet_switchEthereumChain",

@@ -4,18 +4,16 @@
 
 .root {
     position: fixed;
-    top: 120px;
+    top: 134px;
     left: 0;
     right: 0;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: $pink;
     padding-bottom: 160px;
-    background-color: $peach;
-    border-bottom: 1px solid $dark-gray;
-    color: $purple;
+
     @include breakpoint($medium-up) {
+        top: 126px;
         flex-direction: row;
         position: initial;
         display: flex;
@@ -23,50 +21,57 @@
         height: 100%;
         align-items: center;
         justify-content: space-around;
-        background-color: $purple;
         border-bottom: none;
         padding-bottom: 0;
     }
 
     .navigation {
-        width: 100%;
-        padding: 0;
-        margin: 0;
+        position: fixed;
+        width: 94%;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background-color: $blue;
+        border-radius: 30px;
+        padding-bottom: 160px;
+        box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
         @include breakpoint($medium-up) {
+            width: 100%;
+            position: relative;
+            top: 0;
             display: flex;
+            flex-direction: row;
             width: 80%;
             height: 100%;
             align-items: center;
             justify-content: space-around;
-            gap: 14px;
+            box-shadow: none;
+            padding: 0;
         }
     }
 
     .navItem {
         @include centered-flex;
-        height: 65px;
-        background-color: $pink;
-        @include breakpoint($medium-up) {
-            background-color: $purple;
-        }
+        height: 54px;
+        border-radius: 30px;
+
         :hover {
-            background-color: $mustard;
+            box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
         }
 
         .paths {
             @include centered-flex;
             text-transform: uppercase;
-            border-bottom: 0.1px solid $dark-gray;
             min-width: 90px;
+            background-color: $t-black;
+            border-radius: 20px;
 
-            @include breakpoint($medium-up) {
-                border: 2px solid $dark-gray;
-                border-radius: 6px;
-                background-color: $mustard;
-
-                &:hover {
-                    background-color: $gold;
-                }
+            &:hover {
+                background-color: $black;
             }
         }
 

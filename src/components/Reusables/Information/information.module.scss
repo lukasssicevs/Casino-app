@@ -5,17 +5,26 @@
 .root {
     position: fixed;
     bottom: -240px;
-    background-color: $mustard;
-    color: $peach;
+    background-color: $black;
     height: 240px;
     left: 0;
     right: 0;
     padding-block: 40px;
-    border-top: 2px solid $dark-gray;
+    box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
     transition: 1s;
     z-index: 1;
     overflow-y: scroll;
     text-align: center;
+    border-top-left-radius: 20px;
+
+    ::-webkit-scrollbar {
+        opacity: 0;
+        z-index: 1000;
+        border-top: none;
+        width: 16px;
+        padding: 2px;
+        background-color: $black;
+    }
 
     @include breakpoint($medium-up) {
         bottom: -40%;

@@ -6,7 +6,7 @@
     min-width: fit-content;
     margin-block: 30px;
     position: fixed;
-    top: 400px;
+    top: 460px;
     left: 50%;
     transform: translate(-50%, -50%);
     @include breakpoint($medium-up) {
@@ -16,6 +16,5 @@
         transform: translate(0%);
         width: initial;
         margin-block: 0px;
-        border: solid $dark-gray 2px !important;
     }
 }

@@ -15,15 +15,15 @@
         width: 100%;
         border: none;
         padding: 10px 20px;
-        border-radius: 10px;
-        border: 0.5px solid $dark-gray;
-        background-color: $peach;
+        border-radius: 20px;
+        background-color: $t-black;
         outline: 0;
         text-align: right;
-        color: $dark-gray;
+        color: $white;
 
         &:hover {
-            background-color: $mustard;
+            background-color: $black;
+            box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
         }
 
         &::placeholder {
@@ -36,11 +36,11 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        padding: 11px;
+        padding: 8px;
         left: 1%;
         cursor: pointer;
         @include breakpoint($small-up) {
-            padding: 14px;
+            padding: 9px;
         }
     }
 }

@@ -40,22 +40,19 @@
         width: 50%;
         position: absolute;
         float: left;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        transition: all 0.3s ease-in-out, z-index 2s, background-color 1s;
-        background-color: $pink;
+        transition: all 0.2s ease-in-out;
         z-index: 0;
-        border-right: 1px solid $dark-gray;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        background-color: $black;
 
         &:hover {
-            background-color: $magenta;
-            transition: all 0.3s ease-in-out, z-index 0s, background-color 1s;
+            background-color: $black;
+            transition: all 0.2s ease-in-out, z-index 0s, background-color 1s;
             width: 100%;
             z-index: 1;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-right: 0;
-            border: 1px solid $dark-gray;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
     }
 
@@ -63,21 +60,18 @@
         width: 50%;
         position: relative;
         float: right;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        transition: all 0.3s ease-in-out, background-color 1s;
-        background-color: $pink;
+        transition: all 0.2s ease-in-out;
+        background-color: $blue;
         z-index: 0;
-        border-left: 1px solid $dark-gray;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
 
         &:hover {
-            background-color: $magenta;
-            transition: all 0.3s ease-in-out, background-color 1s;
+            transition: all 0.2s ease-in-out;
             width: 100%;
             z-index: 1;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            border: 1px solid $dark-gray;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
         }
     }
 }

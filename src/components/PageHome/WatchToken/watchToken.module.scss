@@ -26,19 +26,14 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-        border-radius: 4px;
-        border: 2px solid $dark-gray;
-        background-color: $purple;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
+        background-color: $black;
         padding: 20px;
-        top: 340px;
+        top: 260px;
         text-align: center;
         @include breakpoint($medium-up) {
-            top: 300px;
             width: 400px;
-        }
-
-        p {
-            color: $mustard;
         }
     }
 

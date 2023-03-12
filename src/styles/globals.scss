@@ -3,18 +3,19 @@
 @import "base.scss";
 @import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&family=VT323&display=swap");
 
-html,
-body {
+html body {
     margin: 0;
     padding: 0;
-    background-color: $pink;
+    background: linear-gradient($black, $blue);
+    min-height: 100vh;
 }
 
 * {
-    color: $dark-gray;
+    color: $white;
     font-size: $font-medium;
-    font-family: "VT323", monospace;
+    font-family: "Ubuntu", sans-serif;
     box-sizing: border-box;
     @include breakpoint($small-up) {
         font-size: $font-intermediate;
@@ -24,7 +25,7 @@ body {
 main {
     position: relative;
     padding-bottom: 120px;
-    top: 120px;
+    margin-top: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,10 +39,8 @@ a {
 }
 
 h1 {
-    color: $magenta;
-    text-shadow: 4px 0px $dark-gray;
     letter-spacing: 4px;
-    font-size: $font-x-large;
+    font-size: $font-large;
 
     @include breakpoint($small-up) {
         font-size: $font-xl-large;
@@ -61,10 +60,6 @@ h3 {
     text-align: center;
     margin-top: 0px;
     margin-bottom: 10px;
-
-    @include breakpoint($small-up) {
-        font-size: $font-large;
-    }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -78,15 +73,15 @@ input[type="number"] {
 }
 
 ::-webkit-scrollbar {
-    background-color: $dark-gray;
+    opacity: 0;
     z-index: 1000;
-    border: 1px solid $dark-gray;
     border-top: none;
-    width: 20px;
+    width: 16px;
+    padding: 2px;
+    background-color: $blue;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $magenta;
-    border-radius: 3px;
-    border: 1px solid $dark-gray;
+    background: $black;
+    border-radius: 20px;
 }

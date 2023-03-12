@@ -13,13 +13,13 @@
         .left {
             text-align: right;
             padding-right: 2%;
-            border-right: 1px solid $dark-gray;
+            border-right: 1px solid $gray;
         }
 
         .right {
             text-align: left;
             padding-left: 2%;
-            border-left: 1px solid $dark-gray;
+            border-left: 1px solid $gray;
         }
 
         .left,
@@ -29,9 +29,8 @@
     }
 
     .previous {
-        background-color: $peach;
-        border-radius: 10px;
-        border: 2px solid $dark-gray;
+        background-color: $t-black;
+        border-radius: 30px;
         padding: 20px 10px;
         width: 90%;
         margin: 0 auto;
@@ -41,7 +40,8 @@
 
         &:hover {
             scale: 1.1;
-            background-color: $mustard;
+            background-color: $black;
+            box-shadow: 0px 0px 5px 1px rgb(99, 99, 99);
         }
 
         @include breakpoint($medium-up) {
@@ -50,7 +50,7 @@
 
         .left,
         .right {
-            border-color: $dark-gray;
+            border-color: $gray;
         }
     }
 }

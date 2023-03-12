@@ -18,9 +18,9 @@ export default function MenuButton({
             onClick={() => setHeaderState(!headerState)}
         >
             {headerState ? (
-                <Cross color={COLORS.mustard} />
+                <Cross color={COLORS.white} />
             ) : (
-                <Hamburger color={COLORS.mustard} />
+                <Hamburger color={COLORS.white} />
             )}
         </div>
     )

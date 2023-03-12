@@ -1,8 +1,9 @@
 const COLORS = {
-    gray: "rgba(70, 69, 69, 0.541)",
-    darkGray: "rgb(70, 69, 69)",
-    magenta: "rgb(255, 0, 255)",
-    mustard: "rgb(241, 212, 105)",
+    gray: "rgb(70, 69, 69)",
+    white: "#ffffff",
+    blue: "#2f2f49",
+    tBlack: "#141420a4",
+    black: "#141420",
 }
 
 export default COLORS

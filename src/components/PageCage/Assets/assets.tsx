@@ -5,7 +5,7 @@ import styles from "./assets.module.scss"
 export default function Assets(): React.ReactElement {
     return (
         <div className={styles.root}>
-            <h3>Your balances:</h3>
+            <h3>Your assets:</h3>
             <Balance token={ETH.symbol} />
             <Balance token={CSN.symbol} />
         </div>

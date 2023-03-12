@@ -90,7 +90,7 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
             </Button>
             <div
                 className={styles.networksDropdown}
-                style={{ display: dropdown ? "block" : "none" }}
+                style={{ display: dropdown ? "flex" : "none" }}
             >
                 {headerState &&
                     NETWORKS.map((network) => (

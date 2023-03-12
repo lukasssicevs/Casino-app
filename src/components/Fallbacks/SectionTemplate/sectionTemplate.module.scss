@@ -1,26 +1,17 @@
 @import "colors.scss";
 @import "mixins.scss";
+@import "base.scss";
 @import "breakpoints.scss";
 
 .description {
     text-align: center;
 
     @include breakpoint($medium-up) {
-        width: 70%;
+        width: 40%;
     }
 
     a {
-        text-transform: uppercase;
-        background-color: $mustard;
-        border: solid $dark-gray 1px;
-        border-radius: 6px;
-        padding: 1px 24px;
-
-        &:hover {
-            background-color: $gold;
-            border: solid $dark-gray 2px;
-            padding: 0px 23px;
-        }
+        text-decoration: underline;
     }
 }
 

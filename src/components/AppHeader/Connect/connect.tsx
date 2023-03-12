@@ -1,12 +1,14 @@
 "use client"
 
 import { useContext } from "react"
+import useLoaded from "@/src/hooks/useLoaded"
 import { AppContext } from "@/app/app"
 import Button from "../../Reusables/Button"
 import styles from "./connect.module.scss"
 import { CONNECT } from "./constants"
 import { truncate } from "@/src/utils/truncate"
 import { ENotification } from "@/src/types/Notification"
+import clsx from "clsx"
 
 interface IProps {
     headerState: boolean
@@ -17,6 +19,7 @@ export default function Connect({ headerState }: IProps): React.ReactElement {
         state: { provider, connection, signerAddress },
         setState,
     } = useContext(AppContext)
+    const loaded = useLoaded()
 
     const connect = async () => {
         if (provider) {
@@ -48,9 +51,8 @@ export default function Connect({ headerState }: IProps): React.ReactElement {
     return (
         <Button
             onClick={connect}
-            className={styles.root}
+            className={clsx(styles.root, loaded && headerState && styles.flex)}
             style={{
-                display: headerState ? "flex" : "none",
                 cursor: !provider ? "not-allowed" : "pointer",
             }}
         >

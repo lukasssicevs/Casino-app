@@ -8,6 +8,7 @@ import styles from "./networks.module.scss"
 import clsx from "clsx"
 import { NETWORKS } from "@/src/constants/networks"
 import { INetwork } from "@/src/types/Network"
+import useLoaded from "@/src/hooks/useLoaded"
 import useMediaQueries from "@/src/hooks/useMediaQueries"
 import { useOnClickOutside } from "usehooks-ts"
 import { ENotification } from "@/src/types/Notification"
@@ -19,6 +20,7 @@ interface IProps {
 export default function Networks({ headerState }: IProps): React.ReactElement {
     const { state, setState } = useContext(AppContext)
     const [dropdown, setDropdown] = useState(false)
+    const loaded = useLoaded()
     const { isTablet, isDesktop } = useMediaQueries()
     const ref = useRef(null)
 
@@ -75,11 +77,11 @@ export default function Networks({ headerState }: IProps): React.ReactElement {
     return (
         <div ref={ref}>
             <Button
-                className={styles.networkBtn}
+                className={clsx(
+                    styles.networkBtn,
+                    loaded && headerState && styles.flex
+                )}
                 onClick={() => setDropdown(!dropdown)}
-                style={{
-                    display: headerState ? "flex" : "none",
-                }}
             >
                 <div className={styles.networkBtnText}>{state.network}</div>
                 <Arrow

@@ -3,13 +3,16 @@
 @import "breakpoints.scss";
 
 .root {
-    min-width: fit-content;
+    min-width: 150px;
     margin-block: 30px;
     position: fixed;
+    display: none;
     top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
     @include breakpoint($medium-up) {
+        display: flex;
+        justify-content: center;
         position: relative;
         top: 0;
         left: 0;
@@ -17,5 +20,10 @@
         width: initial;
         margin-block: 0px;
         border: solid $dark-gray 2px !important;
+        text-align: center;
     }
+}
+
+.flex {
+    display: flex;
 }

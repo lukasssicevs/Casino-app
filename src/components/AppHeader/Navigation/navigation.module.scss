@@ -8,6 +8,7 @@
     left: 0;
     right: 0;
     width: 100%;
+    display: none;
     flex-direction: column;
     align-items: center;
     background-color: $pink;
@@ -53,11 +54,11 @@
             background-color: $mustard;
         }
 
-        .paths {
+        .path {
             @include centered-flex;
             text-transform: uppercase;
             border-bottom: 0.1px solid $dark-gray;
-            min-width: 90px;
+            min-width: 92px;
 
             @include breakpoint($medium-up) {
                 border: 2px solid $dark-gray;
@@ -75,4 +76,8 @@
             color: $gray;
         }
     }
+}
+
+.flex {
+    display: flex;
 }

@@ -3,17 +3,18 @@
 @import "breakpoints.scss";
 
 .networkBtn {
-    min-width: fit-content;
+    min-width: 155px;
     margin-block: 30px;
     position: fixed;
     top: 440px;
     left: 50%;
     transform: translate(-50%);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 10px;
     @include breakpoint($medium-up) {
+        display: flex;
         position: relative;
         top: 0;
         left: 0;
@@ -74,4 +75,8 @@
         background-color: $mustard;
         border: 0.5px solid $dark-gray;
     }
+}
+
+.flex {
+    display: flex;
 }

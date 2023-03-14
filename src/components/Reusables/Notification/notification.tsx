@@ -7,6 +7,7 @@ import COLORS from "@/src/constants/colors"
 import { truncate } from "@/src/utils/truncate"
 import { useOnClickOutside } from "usehooks-ts"
 import { ENotification } from "@/src/types/Notification"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function Notification(): React.ReactElement {
     const {
@@ -37,6 +38,7 @@ export default function Notification(): React.ReactElement {
             notification: ENotification.none,
         }))
     )
+    console.log(<div></div>)
 
     const renderNotification = () => {
         switch (notification) {
@@ -56,7 +58,8 @@ export default function Notification(): React.ReactElement {
                 )
 
             case ENotification.insufficientFunds:
-                return insufficientFunds
+                const parsedText = documentToReactComponents(insufficientFunds)
+                return parsedText
             case ENotification.inappropriateAmount:
                 return inappropriateAmount
             case ENotification.exceedingWithdrawal:
@@ -82,7 +85,7 @@ export default function Notification(): React.ReactElement {
         >
             <Cross
                 className={styles.cross}
-                color={COLORS.mustard}
+                color={COLORS.gold}
                 onClick={() =>
                     setState((prevState) => ({
                         ...prevState,
@@ -90,7 +93,7 @@ export default function Notification(): React.ReactElement {
                     }))
                 }
             />
-            <h3>{renderNotification()}</h3>
+            <h4>{renderNotification()}</h4>
         </div>
     )
 }

@@ -7,12 +7,12 @@
     margin-block: 30px;
     position: fixed;
     display: none;
+    justify-content: center;
     top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
     @include breakpoint($medium-up) {
         display: flex;
-        justify-content: center;
         position: relative;
         top: 0;
         left: 0;

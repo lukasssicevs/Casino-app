@@ -1,3 +1,4 @@
+@import "base.scss";
 @import "colors.scss";
 @import "breakpoints.scss";
 
@@ -24,14 +25,29 @@
         height: 300px;
     }
 
-    h3 {
+    h4 {
         text-align: center;
         color: $mustard;
-    }
+        font-size: $font-medium;
+        @include breakpoint($small-up) {
+            font-size: $font-intermediate;
+        }
+        p {
+            color: $mustard;
+            font-size: $font-medium;
+            @include breakpoint($small-up) {
+                font-size: $font-intermediate;
+            }
+        }
 
-    a {
-        text-decoration: underline;
-        color: $gold;
+        a {
+            text-decoration: underline;
+            color: $gold;
+            font-size: $font-medium;
+            @include breakpoint($small-up) {
+                font-size: $font-intermediate;
+            }
+        }
     }
 
     .cross {

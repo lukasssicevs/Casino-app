@@ -13,7 +13,7 @@ export interface ICMSData {
 export interface INotifications {
     waiting: string
     confirmed: string
-    insufficientFunds: string
+    insufficientFunds: Document
     inappropriateAmount: string
     exceedingWithdrawal: string
     insufficientAllowance: string

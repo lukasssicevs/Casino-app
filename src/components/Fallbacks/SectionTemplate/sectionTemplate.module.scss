@@ -8,6 +8,11 @@
     @include breakpoint($medium-up) {
         width: 70%;
     }
+    ol {
+        p {
+            text-align: left;
+        }
+    }
 
     a {
         text-transform: uppercase;

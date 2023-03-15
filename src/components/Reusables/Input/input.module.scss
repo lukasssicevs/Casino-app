@@ -16,18 +16,18 @@
         border: none;
         padding: 10px 20px;
         border-radius: 10px;
-        border: 0.5px solid $dark-gray;
-        background-color: $peach;
+        border: 3px solid $brown;
+        background-color: $sand;
         outline: 0;
         text-align: right;
-        color: $dark-gray;
+        color: $brown;
 
         &:hover {
-            background-color: $mustard;
+            background-color: $gold;
         }
 
         &::placeholder {
-            color: $gray;
+            color: $brown;
         }
     }
 
@@ -40,7 +40,7 @@
         left: 1%;
         cursor: pointer;
         @include breakpoint($small-up) {
-            padding: 14px;
+            padding: 16px;
         }
     }
 }

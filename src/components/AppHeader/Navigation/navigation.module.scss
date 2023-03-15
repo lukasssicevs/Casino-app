@@ -11,11 +11,10 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    background-color: $pink;
     padding-bottom: 160px;
-    background-color: $peach;
-    border-bottom: 1px solid $dark-gray;
-    color: $purple;
+    background-color: $sand;
+    border-bottom: 3px solid $brown;
+    color: $brown;
     @include breakpoint($medium-up) {
         flex-direction: row;
         position: initial;
@@ -24,7 +23,7 @@
         height: 100%;
         align-items: center;
         justify-content: space-around;
-        background-color: $purple;
+        background-color: $brown;
         border-bottom: none;
         padding-bottom: 0;
     }
@@ -46,34 +45,35 @@
     .navItem {
         @include centered-flex;
         height: 65px;
-        background-color: $pink;
+        background-color: $sand;
         @include breakpoint($medium-up) {
-            background-color: $purple;
+            background-color: $brown;
         }
         :hover {
-            background-color: $mustard;
+            background-color: $gold;
         }
 
         .path {
             @include centered-flex;
             text-transform: uppercase;
-            border-bottom: 0.1px solid $dark-gray;
+            border-bottom: 2px solid $brown;
             min-width: 92px;
+            color: $brown;
+            transition: 0.1s ease-out;
 
             @include breakpoint($medium-up) {
-                border: 2px solid $dark-gray;
                 border-radius: 6px;
-                background-color: $mustard;
+                background-color: $gold;
 
                 &:hover {
-                    background-color: $gold;
+                    background-color: $sand;
                 }
             }
         }
 
         .disabled {
             pointer-events: none;
-            color: $gray;
+            color: $gold;
         }
     }
 }

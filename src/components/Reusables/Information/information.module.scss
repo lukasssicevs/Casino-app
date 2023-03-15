@@ -5,13 +5,13 @@
 .root {
     position: fixed;
     bottom: -240px;
-    background-color: $mustard;
-    color: $peach;
+    background-color: $sand;
+    color: $sand;
     height: 240px;
     left: 0;
     right: 0;
     padding-block: 40px;
-    border-top: 2px solid $dark-gray;
+    border-top: 4px solid $brown;
     transition: 1s;
     z-index: 1;
     overflow-y: scroll;
@@ -24,6 +24,7 @@
 
     p {
         margin-inline: 20px;
+        color: $brown;
         @include breakpoint($medium-up) {
             margin-inline: 30%;
         }

@@ -4,8 +4,8 @@
 
 .notification {
     position: fixed;
-    background-color: $purple;
-    color: $peach;
+    background-color: $gold;
+    color: $brown;
     width: 90%;
     height: 200px;
     display: flex;
@@ -17,7 +17,7 @@
     border-radius: 5px;
     z-index: 1000;
     padding-inline: 40px;
-    border: 2px solid $dark-gray;
+    border: 4px solid $brown;
 
     @include breakpoint($medium-up) {
         top: 480px;
@@ -27,13 +27,13 @@
 
     h4 {
         text-align: center;
-        color: $mustard;
+        color: $brown;
         font-size: $font-medium;
         @include breakpoint($small-up) {
             font-size: $font-intermediate;
         }
         p {
-            color: $mustard;
+            color: $brown;
             font-size: $font-medium;
             @include breakpoint($small-up) {
                 font-size: $font-intermediate;
@@ -42,7 +42,7 @@
 
         a {
             text-decoration: underline;
-            color: $gold;
+            color: $brown;
             font-size: $font-medium;
             @include breakpoint($small-up) {
                 font-size: $font-intermediate;

@@ -16,14 +16,14 @@
 
     a {
         text-transform: uppercase;
-        background-color: $mustard;
-        border: solid $dark-gray 1px;
+        background-color: $gold;
+        border: solid $gold 1px;
         border-radius: 6px;
         padding: 1px 24px;
 
         &:hover {
             background-color: $gold;
-            border: solid $dark-gray 2px;
+            border: solid $gold 2px;
             padding: 0px 23px;
         }
     }

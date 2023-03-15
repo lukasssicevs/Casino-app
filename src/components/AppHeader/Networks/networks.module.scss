@@ -13,17 +13,26 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    color: $brown;
+    border: solid $brown 2px !important;
+    transition: 0.1s ease-out;
+    background-color: $gold;
+
     @include breakpoint($medium-up) {
         display: flex;
         position: relative;
         top: 0;
         left: 0;
         transform: translate(0%);
-        border: solid $dark-gray 2px !important;
+    }
+
+    &:hover {
+        background-color: $sand;
     }
 
     .networkBtnText {
         white-space: nowrap;
+        color: $brown;
     }
 
     .arrowUp,
@@ -38,42 +47,43 @@
 
 .networksDropdown {
     position: absolute;
-    background-color: $peach;
-    border-radius: 6px;
+    background-color: $sand;
+    border-radius: 10px;
     padding: 10px 20px;
-    top: 366px;
+    top: 360px;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 0.5px solid $dark-gray;
+    border: 2px solid $brown;
 
     @include breakpoint($small-up) {
-        top: 640px;
+        top: 650px;
     }
 
     @include breakpoint($medium-up) {
-        top: 90px;
+        top: 96px;
         right: 3%;
         left: initial;
         transform: translate(0%, 0%);
+        border: 4px solid $brown;
     }
 
     .network {
         border-radius: 10px;
         padding: 10px 20px;
         text-align: center;
-        border: 0.5px solid $peach;
+        border: 2px solid $sand;
         margin-block: 3px;
+        color: $brown;
 
         cursor: pointer;
         &:hover {
-            background-color: $gold;
-            border: 0.5px solid $dark-gray;
+            border: 2px solid $brown;
         }
     }
 
     .selectedNetwork {
-        background-color: $mustard;
-        border: 0.5px solid $dark-gray;
+        background-color: $gold;
+        border: 3px solid $brown !important;
     }
 }
 

@@ -12,8 +12,10 @@
     .input {
         width: 100%;
         margin-bottom: 10px;
+
         input {
             text-align: left;
+            border: 3px solid $brown;
         }
 
         svg {
@@ -24,25 +26,32 @@
     .message {
         width: 100%;
         height: 240px;
-        background-color: $peach;
+        background-color: $sand;
         outline: 0;
-        border: 1px solid $dark-gray;
+        border: 3px solid $brown;
         border-radius: 10px;
         margin-bottom: 6px;
         padding: 20px 14px;
-        color: $dark-gray;
+        color: $brown;
 
         &::placeholder {
-            color: $gray;
+            color: $brown;
         }
 
         &:hover {
-            background-color: $mustard;
+            background-color: $gold;
         }
     }
 
     .submit {
         width: 100%;
-        border: 2px solid $dark-gray;
+        border: 2px solid $sand;
+        color: $sand;
+        background-color: $brown;
+        &:hover {
+            border: 2px solid $brown;
+            background-color: $gold;
+            color: $brown;
+        }
     }
 }

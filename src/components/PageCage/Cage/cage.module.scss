@@ -32,12 +32,12 @@
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
             transition: all 0.3s ease-in-out, z-index 2s, background-color 1s;
-            background-color: $pink;
+            background-color: $green;
             z-index: 0;
-            border-right: 1px solid $dark-gray;
+            border: 3px solid $gold;
 
             &:hover {
-                background-color: $magenta;
+                background-color: $gold;
                 transition: all 0.3s ease-in-out, z-index 0s,
                     background-color 1s;
                 width: 100%;
@@ -45,8 +45,12 @@
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
                 border-right: 0;
-                border: 1px solid $dark-gray;
+                border: 3px solid $brown;
+                color: $brown;
             }
+        }
+        .mint {
+            border-right: 1px solid $gold;
         }
 
         .burn {
@@ -56,20 +60,20 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             transition: all 0.3s ease-in-out, background-color 1s;
-            background-color: $pink;
+            background-color: $green;
             z-index: 0;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
-            border-left: 1px solid $dark-gray;
+            border-left: 1px solid $gold;
 
             &:hover {
-                background-color: $magenta;
+                background-color: $gold;
                 transition: all 0.3s ease-in-out, background-color 1s;
                 width: 100%;
                 z-index: 1;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
-                border: 1px solid $dark-gray;
+                border: 3px solid $brown;
             }
         }
     }

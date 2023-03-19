@@ -3,9 +3,9 @@
 @import "breakpoints.scss";
 
 .root {
-    background-color: $peach;
+    background-color: $sand;
     border-radius: 10px;
-    border: 2px solid $dark-gray;
+    border: 3px solid $brown;
     padding: 20px 10px;
     margin: 0 auto;
     margin-top: 40px;
@@ -13,9 +13,13 @@
     cursor: help;
     width: 90%;
 
+    h3 {
+        color: $brown;
+    }
+
     &:hover {
         scale: 1.1;
-        background-color: $mustard;
+        background-color: $gold;
     }
 
     @include breakpoint($medium-up) {

@@ -39,7 +39,7 @@ export default async function Home() {
                 watchTokenInfo={watchTokenInfo}
             />
             <Introduction mainDescription={mainDescription} />
-            <Cross color={COLORS.darkGray} style={{ cursor: "default" }} />
+            <Cross color={COLORS.gold} style={{ cursor: "default" }} />
             <ContactForm contactFormMessage={contactFormMessage} />
         </main>
     )

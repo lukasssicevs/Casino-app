@@ -11,6 +11,15 @@
     top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: $brown;
+    transition: 0.1s ease-out;
+    background-color: $gold;
+    border: solid $brown 2px !important;
+
+    &:hover {
+        background-color: $sand !important;
+    }
+
     @include breakpoint($medium-up) {
         display: flex;
         position: relative;
@@ -19,7 +28,6 @@
         transform: translate(0%);
         width: initial;
         margin-block: 0px;
-        border: solid $dark-gray 2px !important;
         text-align: center;
     }
 }

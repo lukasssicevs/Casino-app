@@ -33,7 +33,7 @@ export default function Header(): React.ReactElement {
                 <Image
                     src={`https:${CMSData.logo.image.fields.file.url}`}
                     alt="logo"
-                    width={190}
+                    width={150}
                     height={100}
                 />
             </Link>

@@ -38,7 +38,7 @@ export default function Input({
     return (
         <div className={clsx(styles.root, className)}>
             <div className={styles.clearInput} onClick={onClear}>
-                <Cross color={COLORS.gray} />
+                <Cross color={COLORS.brown} />
             </div>
             <input
                 className={styles.input}

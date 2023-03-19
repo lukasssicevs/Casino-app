@@ -8,11 +8,11 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: $pink;
+    background-color: $green;
 }
 
 * {
-    color: $dark-gray;
+    color: $gold;
     font-size: $font-medium;
     font-family: "VT323", monospace;
     box-sizing: border-box;
@@ -38,8 +38,8 @@ a {
 }
 
 h1 {
-    color: $magenta;
-    text-shadow: 4px 0px $dark-gray;
+    color: $gold;
+    text-shadow: 6px 0px $brown;
     letter-spacing: 4px;
     font-size: $font-x-large;
 
@@ -86,15 +86,15 @@ input[type="number"] {
 }
 
 ::-webkit-scrollbar {
-    background-color: $dark-gray;
+    background-color: $gold;
     z-index: 1000;
-    border: 1px solid $dark-gray;
+    border: 1px solid $gold;
     border-top: none;
     width: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $magenta;
+    background: $brown;
     border-radius: 3px;
-    border: 1px solid $dark-gray;
+    border: 2px solid $gold;
 }
